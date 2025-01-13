@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Signika+Negative:wght@300..700&display=swap');
+
+:root{
+    --bgcolor: #F29F58;
+    --txtcolor: #1B1833;
+    --boxcolor: #AB4459;
+    --boxborder: #441752;
+    --lighterboxcolor: #bd6d7c;
+    --font: "Afacad Flux", serif;
+}
+
+body{
+    background-color: var(--bgcolor);
+    font-family: var(--font);
+    text-align: center;
+}
+
+.page{
+    display: flex;
+}
+
+.sidebar{
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2em;
+}
+
+.sidebartitle{
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+/* 
+.viewallprojects,.important,.pending,.completed,.addnewproject{
+    width: 100%;
+} */
+
+.sidebarbutton {
+  background-color: var(--boxcolor);
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: var(--txtcolor);
+  display: flex;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 1rem 2rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none var(--txtcolor) solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sidebarbutton:focus {
+  outline: 0;
+}
+
+.sidebarbutton:after {
+  content: '';
+  position: absolute;
+  border: 5px solid var(--boxborder);
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.sidebarbutton:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .sidebarbutton {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+.rest{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.todoTitle{
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.project{
+    border: 10px solid var(--boxborder);
+    border-radius: 10px;
+    padding: 20px  50px;
+    margin: 15px;
+    background-color: var(--boxcolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectTitle{
+    font-size: 2rem;
+}
+
+li{
+    display: inline-block;
+    border: 5px solid var(--boxborder);
+    border-radius: 50px;
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--lighterboxcolor);
+}
+
+input, select{
+    border-radius: 10px;
+    outline: 2px solid var(--boxborder);
+    border: 0;
+    font-family: var(--font);
+    background-color: var(--lighterboxcolor);
+    outline-offset: 2px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    font-size: 1em;
+}
+  
+input:focus {
+    outline-offset: 5px;
+    background-color: var(--lighterboxcolor);
+}
+
+#taskname, #taskdesc{
+    color: var(--txtcolor);
+}
+
+.task-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: var(--txtcolor);
+    font-family: var(--font);
+    font-size: 1.2rem;
+}
+
+.task-list{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: center;
+    font-family: var(--font);
+}
+
+.complete-task, .delete-task, .add-task-btn, .remove-project, #submitproject{
+    background-color: var(--lighterboxcolor);
+    border: 2px solid var(--boxborder);
+    border-radius: 30px;
+    box-shadow: var(--txtcolor) 4px 4px 0 0;
+    color: var(--txtcolor);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: var(--font);
+}
+
+.complete-task:hover, .delete-task:hover, .add-task-btn:hover, .remove-project :hover, #submitproject:hover{
+    background-color: #c5929c;
+}
+
+.complete-task:active, .delete-task:active, .add-task-btn:active, .remove-project:active, #submitproject:active{
+    box-shadow: var(--txtcolor) 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .complete-task, .delete-task, .add-task-btn, .remove-project, #submitproject {
+        min-width: 120px;
+        padding: 0 20px;
+    }
+}
+
+.projectform{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    font-family: var(--font);
+}
+
+.newprojectinfocard{
+    font-size: 1.5rem;
+}
+
+::placeholder{
+    color: black;
+    opacity: 0.5;
+}
+
+.footer{
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--txtcolor);
+    margin-top: 50px;
+    position: relative;
+}
